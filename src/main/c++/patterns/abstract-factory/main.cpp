@@ -58,11 +58,11 @@ class AbstractFactory
 class ConcreteFactory1 : public AbstractFactory
 {
     public:
-        ProductA* createProductA()
+        ProductA* createProductA() override
         {
             return new ConcreteProductA1();
         }
-        ProductB* createProductB()
+        ProductB* createProductB() override
         {
             return new ConcreteProductB1();
         }
@@ -71,11 +71,11 @@ class ConcreteFactory1 : public AbstractFactory
 class ConcreteFactory2 : public AbstractFactory
 {
     public:
-        ProductA* createProductA()
+        ProductA* createProductA() override
         {
             return new ConcreteProductA2();
         }
-        ProductB* createProductB()
+        ProductB* createProductB() override
         {
             return new ConcreteProductB2();
         }
