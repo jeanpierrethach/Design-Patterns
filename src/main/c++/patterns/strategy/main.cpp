@@ -13,7 +13,7 @@ class Strategy
 
 class ConcreteStrategyA : public Strategy
 {
-    void algorithm()
+    void algorithm() override
     {
         std::cout << "Concrete Strategy A" << std::endl;
     }
@@ -21,7 +21,7 @@ class ConcreteStrategyA : public Strategy
 
 class ConcreteStrategyB : public Strategy
 {
-    void algorithm()
+    void algorithm() override
     {
         std::cout << "Concrete Strategy B" << std::endl;
     }
@@ -29,7 +29,7 @@ class ConcreteStrategyB : public Strategy
 
 class ConcreteStrategyC : public Strategy
 {
-    void algorithm()
+    void algorithm() override
     {
         std::cout << "Concrete Strategy C" << std::endl;
     }
