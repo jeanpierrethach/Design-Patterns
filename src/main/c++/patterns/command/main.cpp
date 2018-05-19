@@ -36,7 +36,7 @@ class ConcreteCommand1 : public Command
         
         }
 
-        void execute()
+        void execute() override
         {
             m_receiver->turnOn();
         }
@@ -55,7 +55,7 @@ class ConcreteCommand2 : public Command
         
         }
 
-        void execute()
+        void execute() override
         {
             m_receiver->turnOff();
         }
