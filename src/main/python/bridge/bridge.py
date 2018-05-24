@@ -14,23 +14,25 @@ class ConcreteImplementorB(Implementor):
         print("Concrete Implementor B.")
 
 class Abstraction(ABC):
+    def __init__(self, impl):
+        self._implementor = impl
+
     @abstractmethod
     def operation(self):
         pass
 
 class RefinedAbstraction(Abstraction):
     def __init__(self, impl):
-        self._implementor = impl
+        super().__init__(impl)
 
     def operation(self):
         self._implementor.action()
 
 if __name__ == '__main__':
-    implementorA = ConcreteImplementorA()
-    implementorB = ConcreteImplementorB()
+    abstracts = [
+        RefinedAbstraction(ConcreteImplementorA()),
+        RefinedAbstraction(ConcreteImplementorB())
+    ]
 
-    abstractA = RefinedAbstraction(implementorA)
-    abstractA.operation()
-
-    abstractB = RefinedAbstraction(implementorB)
-    abstractB.operation()
+    for abstract in abstracts:
+        abstract.operation()
