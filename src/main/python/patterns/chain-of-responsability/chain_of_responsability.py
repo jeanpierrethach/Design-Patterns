@@ -13,35 +13,35 @@ class Handler(ABC):
 
     def handle_request(self, amount):
         if self.can_handle_request(amount):
-            print("Paid by %s" % self.get_class_name())
+            print("Paid by %s" % self.get_name())
             print("Old balance: %f" % self._balance)
             self._balance -= amount
             print("New balance: %f" % self._balance)
         elif self._successor:
-            print(self.get_class_name() + " cannot pay")
+            print(self.get_name() + " cannot pay")
             self._successor.handle_request(amount)
         else:
             print("None could handle the request")
 
     @abstractmethod
-    def get_class_name(self):
+    def get_name(self):
         pass
 
 class Receiver1(Handler):
-    def get_class_name(self):
-        return self.__class__.__name__
+    def get_name(self):
+        return "Receiver 1"
 
 class Receiver2(Handler):
-    def get_class_name(self):
-        return self.__class__.__name__
+    def get_name(self):
+        return "Receiver 2"
 
 class Receiver3(Handler):
-    def get_class_name(self):
-        return self.__class__.__name__
+    def get_name(self):
+        return "Receiver 3"
 
 class Receiver4(Handler):
-    def get_class_name(self):
-        return self.__class__.__name__
+    def get_name(self):
+        return "Receiver 4"
 
 if __name__ == '__main__':
     receiver1 = Receiver1(100)
