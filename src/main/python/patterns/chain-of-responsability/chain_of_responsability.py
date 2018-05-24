@@ -28,30 +28,18 @@ class Handler(ABC):
         pass
 
 class Receiver1(Handler):
-    def __init__(self, balance):
-        super().__init__(balance)
-
     def get_class_name(self):
         return self.__class__.__name__
 
 class Receiver2(Handler):
-    def __init__(self, balance):
-        super().__init__(balance)
-
     def get_class_name(self):
         return self.__class__.__name__
 
 class Receiver3(Handler):
-    def __init__(self, balance):
-        super().__init__(balance)
-
     def get_class_name(self):
         return self.__class__.__name__
 
 class Receiver4(Handler):
-    def __init__(self, balance):
-        super().__init__(balance)
-
     def get_class_name(self):
         return self.__class__.__name__
 
