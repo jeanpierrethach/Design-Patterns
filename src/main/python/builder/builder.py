@@ -15,9 +15,6 @@ class Product:
         return "%s %s" % (self._partA, self._partB)
 
 class Builder(ABC):
-    def __init__(self, product):
-        self._product = product
-    
     @abstractmethod
     def buildPartA(self):
         pass
@@ -31,6 +28,9 @@ class Builder(ABC):
         pass
 
 class ConcreteBuilder(Builder):
+    def __init__(self):
+        self._product = Product()
+    
     def buildPartA(self):
         self._product.makeA("Part A built.")
 
@@ -52,8 +52,7 @@ class Director:
         self._builder.buildPartB()
 
 if __name__ == '__main__':
-    product1 = Product()
-    builder = ConcreteBuilder(product1)
+    builder = ConcreteBuilder()
 
     director = Director(builder)
     director.construct()
