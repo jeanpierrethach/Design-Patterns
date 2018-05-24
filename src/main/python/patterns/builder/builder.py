@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-class Product:
+class Product(object):
     def __init__(self):
         self._partA = None
         self._partB = None
@@ -40,7 +40,7 @@ class ConcreteBuilder(Builder):
     def getResult(self):
         return self._product
 
-class Director:
+class Director(object):
     def __init__(self, builder):
         self._builder = builder
 
