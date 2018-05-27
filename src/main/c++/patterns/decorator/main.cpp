@@ -6,6 +6,7 @@ using std::string;
 class Component
 {
     public:
+        virtual ~Component() {}
         virtual void operation() = 0;
 };
 
@@ -47,6 +48,7 @@ class ConcreteDecoratorA : public Decorator
 
         void operation() override
         {
+            Decorator::operation();
             std::cout << "Concrete decorator A op." << std::endl;
         }
 };
@@ -62,6 +64,7 @@ class ConcreteDecoratorB : public Decorator
 
         void operation() override
         {
+            Decorator::operation();
             std::cout << "Concrete decorator B op." << std::endl;
         }
 };
